@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AWS Cloud Internship Project - Custom VPC, EC2, S3, IAM, CloudWatch and automated backup">
+    <title>AWS Cloud Internship Platform</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container nav-container">
+
+            <div class="logo">
+                <span class="logo-icon">☁</span>
+                <div>
+                    <h2>AWS Cloud Platform</h2>
+                    <span>Internship Project</span>
+                </div>
+            </div>
+
+            <nav class="navbar">
+                <a href="#overview">Overview</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#security">Security</a>
+                <a href="#monitoring">Monitoring</a>
+                <a href="#about">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="overview">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    System Online
+                </div>
+
+                <p class="eyebrow">AWS CLOUD INTERNSHIP PROJECT</p>
+
+                <h1>
+                    Secure Cloud Infrastructure
+                    <span>Built on AWS</span>
+                </h1>
+
+                <p class="hero-description">
+                    A practical cloud environment demonstrating networking,
+                    compute, storage, IAM security, monitoring, backup and
+                    cost-control concepts using AWS.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#architecture" class="btn btn-primary">
+                        Explore Architecture →
+                    </a>
+
+                    <a href="#monitoring" class="btn btn-secondary">
+                        View Monitoring
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="card-top">
+                    <span>PROJECT STATUS</span>
+                    <span class="live-indicator">● LIVE</span>
+                </div>
+
+                <div class="server-icon">◈</div>
+
+                <h3>Internship Demo Platform</h3>
+
+                <p>
+                    Student Portal hosted on an Ubuntu EC2 web server
+                    inside a custom AWS VPC.
+                </p>
+
+                <div class="region">
+                    <span>Region</span>
+                    <strong>ap-south-1 · Mumbai</strong>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= INFRASTRUCTURE ================= -->
+    <section class="section infrastructure">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">INFRASTRUCTURE</p>
+                <h2>Cloud Infrastructure Dashboard</h2>
+                <p>
+                    Core AWS components powering this internship project.
+                </p>
+            </div>
+
+
+            <div class="service-grid">
+
+                <!-- EC2 -->
+                <div class="service-card">
+                    <div class="service-icon">EC2</div>
+
+                    <div class="service-header">
+                        <h3>EC2 Web Server</h3>
+                        <span class="service-status">Running</span>
+                    </div>
+
+                    <p>
+                        Ubuntu Linux server running Apache and hosting
+                        the Student Internship Portal.
+                    </p>
+
+                    <div class="service-info">
+                        <span>Instance</span>
+                        <strong>t3.micro</strong>
+                    </div>
+                </div>
+
+
+                <!-- S3 -->
+                <div class="service-card">
+                    <div class="service-icon">S3</div>
+
+                    <div class="service-header">
+                        <h3>S3 Storage</h3>
+                        <span class="service-status">Active</span>
+                    </div>
+
+                    <p>
+                        Private object storage for project assets,
+                        logs and application data.
+                    </p>
+
+                    <div class="service-info">
+                        <span>Bucket</span>
+                        <strong>Project Storage</strong>
+                    </div>
+                </div>
+
+
+                <!-- IAM -->
+                <div class="service-card">
+                    <div class="service-icon">IAM</div>
+
+                    <div class="service-header">
+                        <h3>IAM Security</h3>
+                        <span class="service-status">Secured</span>
+                    </div>
+
+                    <p>
+                        Identity and access management using roles,
+                        policies and least-privilege principles.
+                    </p>
+
+                    <div class="service-info">
+                        <span>Access</span>
+                        <strong>Role Based</strong>
+                    </div>
+                </div>
+
+
+                <!-- CloudWatch -->
+                <div class="service-card">
+                    <div class="service-icon">CW</div>
+
+                    <div class="service-header">
+                        <h3>CloudWatch</h3>
+                        <span class="service-status monitoring-status">
+                            Monitoring
+                        </span>
+                    </div>
+
+                    <p>
+                        Infrastructure monitoring with CPU metrics,
+                        status checks and alarms.
+                    </p>
+
+                    <div class="service-info">
+                        <span>Alerts</span>
+                        <strong>SNS Enabled</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ARCHITECTURE ================= -->
+    <section class="section architecture-section" id="architecture">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">ARCHITECTURE</p>
+
+                <h2>AWS Infrastructure Architecture</h2>
+
+                <p>
+                    A simplified view of how the major components
+                    communicate with each other.
+                </p>
+            </div>
+
+
+            <div class="architecture">
+
+                <div class="architecture-node">
+                    <div class="node-icon">🌐</div>
+                    <h3>Internet</h3>
+                    <p>Public Access</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node highlight">
+                    <div class="node-icon">VPC</div>
+                    <h3>Custom VPC</h3>
+                    <p>10.0.0.0/16</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    <div class="node-icon">EC2</div>
+                    <h3>Web Server</h3>
+                    <p>10.0.1.144</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    <div class="node-icon">S3</div>
+                    <h3>Storage</h3>
+                    <p>Private Bucket</p>
+                </div>
+
+            </div>
+
+
+            <div class="architecture-secondary">
+
+                <div class="flow-box">
+                    <span>EC2</span>
+                    <strong>IAM Role</strong>
+                    <span>S3</span>
+                </div>
+
+                <div class="flow-box">
+                    <span>EC2</span>
+                    <strong>CloudWatch</strong>
+                    <span>SNS → Email</span>
+                </div>
+
+                <div class="flow-box">
+                    <span>EBS</span>
+                    <strong>Snapshot</strong>
+                    <span>Recovery</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NETWORK ================= -->
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">NETWORK DESIGN</p>
+                <h2>Custom VPC Network</h2>
+            </div>
+
+
+            <div class="network-grid">
+
+                <div class="network-card">
+                    <span class="network-number">01</span>
+                    <h3>VPC</h3>
+                    <p>10.0.0.0/16</p>
+                    <small>Custom isolated network</small>
+                </div>
+
+                <div class="network-card">
+                    <span class="network-number">02</span>
+                    <h3>Public Subnet</h3>
+                    <p>10.0.1.0/24</p>
+                    <small>ap-south-1a</small>
+                </div>
+
+                <div class="network-card">
+                    <span class="network-number">03</span>
+                    <h3>Internet Gateway</h3>
+                    <p>Internet Access</p>
+                    <small>Connected to VPC</small>
+                </div>
+
+                <div class="network-card">
+                    <span class="network-number">04</span>
+                    <h3>Security Group</h3>
+                    <p>HTTP + Restricted SSH</p>
+                    <small>Inbound traffic control</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SECURITY ================= -->
+    <section class="section dark-section" id="security">
+
+        <div class="container">
+
+            <div class="section-heading light-heading">
+
+                <p class="eyebrow">SECURITY</p>
+
+                <h2>Security & IAM</h2>
+
+                <p>
+                    Security controls implemented using AWS identity,
+                    network and storage security practices.
+                </p>
+
+            </div>
+
+
+            <div class="security-grid">
+
+                <div class="security-item">
+                    <div class="check">✓</div>
+                    <div>
+                        <h3>Restricted SSH</h3>
+                        <p>
+                            SSH access is restricted to the administrator's
+                            current public IP address.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="security-item">
+                    <div class="check">✓</div>
+                    <div>
+                        <h3>IAM Role for EC2</h3>
+                        <p>
+                            EC2 accesses S3 through an IAM role instead of
+                            storing AWS access keys on the server.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="security-item">
+                    <div class="check">✓</div>
+                    <div>
+                        <h3>Private S3 Bucket</h3>
+                        <p>
+                            S3 Block Public Access remains enabled for
+                            project storage.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="security-item">
+                    <div class="check">✓</div>
+                    <div>
+                        <h3>Root MFA</h3>
+                        <p>
+                            Root account multi-factor authentication is
+                            enabled.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MONITORING ================= -->
+    <section class="section" id="monitoring">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">OBSERVABILITY</p>
+
+                <h2>Monitoring, Alerts & Backup</h2>
+
+                <p>
+                    The infrastructure is designed to detect problems,
+                    send alerts and provide a basic recovery mechanism.
+                </p>
+
+            </div>
+
+
+            <div class="monitoring-grid">
+
+                <div class="monitor-card">
+
+                    <div class="monitor-icon">◉</div>
+
+                    <h3>CloudWatch</h3>
+
+                    <p>
+                        Monitor EC2 CPU utilization and instance
+                        status checks.
+                    </p>
+
+                    <span>Metrics & Alarms</span>
+
+                </div>
+
+
+                <div class="monitor-card">
+
+                    <div class="monitor-icon">✉</div>
+
+                    <h3>SNS Alerts</h3>
+
+                    <p>
+                        CloudWatch alarms can notify the administrator
+                        through email.
+                    </p>
+
+                    <span>Email Notification</span>
+
+                </div>
+
+
+                <div class="monitor-card">
+
+                    <div class="monitor-icon">▣</div>
+
+                    <h3>EBS Snapshot</h3>
+
+                    <p>
+                        A snapshot provides a recovery point for the
+                        EC2 root volume.
+                    </p>
+
+                    <span>Backup & Recovery</span>
+
+                </div>
+
+
+                <div class="monitor-card">
+
+                    <div class="monitor-icon">₹</div>
+
+                    <h3>Cost Control</h3>
+
+                    <p>
+                        AWS Budgets and resource cleanup help control
+                        unexpected cloud spending.
+                    </p>
+
+                    <span>Budget Monitoring</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= APPLICATION ================= -->
+    <section class="section application-section">
+
+        <div class="container application-content">
+
+            <div>
+
+                <p class="eyebrow">APPLICATION</p>
+
+                <h2>Student Internship Portal</h2>
+
+                <p>
+                    This web application demonstrates how a Linux-based
+                    web server can be deployed inside a custom AWS
+                    network and exposed securely through the internet.
+                </p>
+
+                <div class="tech-tags">
+                    <span>Ubuntu Linux</span>
+                    <span>Apache</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>AWS EC2</span>
+                    <span>AWS VPC</span>
+                </div>
+
+            </div>
+
+
+            <div class="application-card">
+
+                <div class="terminal-top">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="terminal-body">
+
+                    <p>
+                        <span class="terminal-green">ubuntu</span>
+                        @
+                        <span class="terminal-blue">aws-server</span>
+                    </p>
+
+                    <p>$ systemctl status apache2</p>
+
+                    <p class="terminal-success">
+                        ● apache2.service — active (running)
+                    </p>
+
+                    <p>$ curl /health</p>
+
+                    <p class="terminal-success">
+                        {"status":"healthy"}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECT INFO ================= -->
+    <section class="section" id="about">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">PROJECT INFORMATION</p>
+
+                <h2>A Practical AWS Cloud Implementation</h2>
+
+                <p>
+                    This project brings together the fundamental
+                    infrastructure concepts required for a secure
+                    and manageable cloud environment.
+                </p>
+
+            </div>
+
+
+            <div class="project-info-grid">
+
+                <div>
+                    <span>Project</span>
+                    <strong>AWS Cloud Internship</strong>
+                </div>
+
+                <div>
+                    <span>Region</span>
+                    <strong>Asia Pacific — Mumbai</strong>
+                </div>
+
+                <div>
+                    <span>Platform</span>
+                    <strong>AWS Cloud</strong>
+                </div>
+
+                <div>
+                    <span>Server</span>
+                    <strong>Ubuntu + Apache</strong>
+                </div>
+
+                <div>
+                    <span>Network</span>
+                    <strong>Custom VPC</strong>
+                </div>
+
+                <div>
+                    <span>Storage</span>
+                    <strong>Amazon S3 + EBS</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <h3>AWS Cloud Internship Platform</h3>
+
+                <p>
+                    Designed and deployed as a practical AWS
+                    cloud infrastructure project.
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <p>Built by <strong>Sakshi Nangare</strong></p>
+                <p>Cloud Engineer in Progress ☁</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 AWS Cloud Internship Project · Built on AWS
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+
